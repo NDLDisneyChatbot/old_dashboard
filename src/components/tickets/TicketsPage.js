@@ -18,6 +18,7 @@ var getCounts = function(list){
     Help: 0,
     Emergency: 0
   }
+  if(list && list.length >= 0){
     list.forEach(element => {
       switch (element.status) {
         case 0:
@@ -33,7 +34,10 @@ var getCounts = function(list){
           break;
       }
     });
-    return counts;        
+    return counts;  
+  } else {
+    return counts;
+  }      
 }
 
 // var pickupMarkersList = [{ lat: -34.397, lng: 150.644 },{ lat: -31.397, lng: 150.644 },{ lat: -33.397, lng: 150.644 }];
