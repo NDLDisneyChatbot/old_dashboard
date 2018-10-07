@@ -29,7 +29,7 @@ const MapWithAMarker = withScriptjs(withGoogleMap(props =>
             return (
                 <Marker
                 key={Math.random()}
-                icon = {{url : 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (index+1) + '|3232FF|000000',
+                icon = {{url : 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + (index+1) + '|00FFFF|000000',
                 scaledSize : {
                     width: size,
                     height: size
