@@ -60,8 +60,8 @@ const TicketList = ({tickets}) => {
                               }
                             </span>
                             <span style={{
-                                color: cellInfo.row.status === 1000 ? '#ff2e00'
-                                  : cellInfo.row.status === 1001 ? '#ffbf00'
+                                color: cellInfo.row.status === 6 ? '#ff2e00'
+                                  : cellInfo.row.status === 2 ? '#ffbf00'
                                   : '#57d500',
                                 transition: 'all .3s ease'
                               }}>

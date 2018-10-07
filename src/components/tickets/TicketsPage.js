@@ -11,6 +11,31 @@ import GMap from '../maps/GoogleMap';
 
 var apiKey = 'AIzaSyBO-pYdGQggM2aTBx92adMwqECtv5SACW4';
 
+
+var getCounts = function(list){
+  var counts = {
+    Safe: 0,
+    Help: 0,
+    Emergency: 0
+  }
+    list.forEach(element => {
+      switch (element.status) {
+        case 0:
+          counts.Safe++;
+          break;
+        case 2:
+          counts.Help++;
+          break;
+        case 6:
+          counts.Emergency++;
+          break;
+        default:
+          break;
+      }
+    });
+    return counts;        
+}
+
 // var pickupMarkersList = [{ lat: -34.397, lng: 150.644 },{ lat: -31.397, lng: 150.644 },{ lat: -33.397, lng: 150.644 }];
 class TicketsPage extends React.Component{
     
@@ -52,6 +77,7 @@ class TicketsPage extends React.Component{
               mapElement={<div style={{ height: `100%` }} />}
               markersList={tickets.users}
               pickupMarkersList = {tickets.pickups}
+              counts = {getCounts(tickets.users)}
             />
             <TicketList tickets={tickets.users} />
           </div>
